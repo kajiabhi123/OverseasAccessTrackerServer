@@ -2,10 +2,10 @@
   "name": "overseasaccesstrackerserver",
   "version": "1.0.0",
   "description": "Overseas Access Tracker Backend Server",
-  "main": "node.js",
+  "main": "Node.js",
   "type": "module",
   "scripts": {
-    "start": "node node.js"
+    "start": "node Node.js"
   },
   "dependencies": {
     "express": "^4.18.2",
