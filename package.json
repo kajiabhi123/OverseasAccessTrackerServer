@@ -1,9 +1,7 @@
 {
   "name": "overseasaccesstrackerserver",
   "version": "1.0.0",
-  "description": "Overseas Access Tracker Backend Server",
   "main": "Node.js",
-  "type": "module",
   "scripts": {
     "start": "node Node.js"
   },
