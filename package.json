@@ -1,18 +1,17 @@
 {
   "name": "overseasaccesstrackerserver",
   "version": "1.0.0",
-  "description": "Overseas Access Tracker Backend Server",
-  "main": "node.js",
-  "type": "module",
+  "main": "Node.js",
+  "type": "commonjs",
   "scripts": {
-    "start": "node node.js"
+    "start": "node Node.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "mysql2": "^3.9.0",
-    "node-cron": "^4.2.1",
-    "nodemailer": "^7.0.10"
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.10.1"
   }
 }
