@@ -11,16 +11,27 @@ const PORT = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
+// const dbConfig = {
+//   host: 'sql.freedb.tech',
+//   user: 'freedb_abhishek',
+//   password: 'f*udP%?eaHsC6&J',
+//   database: 'freedb_overseas_access_tracker',
+//   port: 3306,
+//   waitForConnections: true,
+//   connectionLimit: 10,
+//   queueLimit: 0,
+// };
+
+
 const dbConfig = {
-  host: 'sql.freedb.tech',
-  user: 'freedb_abhishek',
-  password: 'f*udP%?eaHsC6&J',
-  database: 'freedb_overseas_access_tracker',
-  port: 3306,
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
+  ssl: { rejectUnauthorized: true }
 };
+
 
 let db;
 
