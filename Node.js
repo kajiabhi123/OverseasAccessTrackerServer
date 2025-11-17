@@ -54,7 +54,7 @@ async function createTables(pool) {
       role ENUM('ADMIN','STAFF','USER') DEFAULT 'USER',
       is_active TINYINT(1) DEFAULT 1,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    );
+    )
     `,
     `
     CREATE TABLE IF NOT EXISTS companies (
@@ -62,7 +62,7 @@ async function createTables(pool) {
       company_name VARCHAR(200) NOT NULL UNIQUE,
       is_active TINYINT(1) DEFAULT 1,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    );
+    )
     `,
     `
     CREATE TABLE IF NOT EXISTS trips (
@@ -79,12 +79,17 @@ async function createTables(pool) {
       updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
       FOREIGN KEY (user_id) REFERENCES accounts(account_id) ON DELETE CASCADE,
       FOREIGN KEY (company_id) REFERENCES companies(company_id) ON DELETE SET NULL
-    );
-    `,
+    )
+    `
   ];
-  for (const q of queries) await pool.query(q);
-  console.log('✅ Tables checked/created');
+
+  for (const q of queries) {
+    await pool.query(q);
+  }
+
+  console.log("✅ Tables checked/created");
 }
+
 
 // ------------------------------------------------------------
 // ENSURE DEFAULT ADMIN
