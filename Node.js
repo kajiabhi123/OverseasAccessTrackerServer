@@ -24,18 +24,16 @@ app.use(express.json());
 
 
 const dbConfig = {
-  host: process.env.MYSQL_HOST,
-  user: process.env.MYSQL_USER,
-  password: process.env.MYSQL_PASSWORD,
-  database: process.env.MYSQL_DATABASE,
-  port: process.env.MYSQL_PORT,
-  ssl: {
-    ca: process.env.MYSQL_CA_CERT
-  },
+  host: process.env.MYSQLHOST,        // shinkansen.proxy.rlwy.net
+  user: process.env.MYSQLUSER,        // root
+  password: process.env.MYSQLPASSWORD,// your password
+  database: process.env.MYSQLDATABASE,// railway
+  port: process.env.MYSQLPORT,        // 52437
   waitForConnections: true,
   connectionLimit: 10,
-  queueLimit: 0,
+  queueLimit: 0
 };
+
 
 
 
